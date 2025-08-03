@@ -27,9 +27,7 @@ section {
 }
 
 .inicio-fundo {
-    /* aula 3 */
     background-image: url('img/4965007.jpg');
-    /* Substitua pelo caminho da sua imagem */
     background-size: cover;
     background-position: right;
     border-radius: 80px;
@@ -37,29 +35,35 @@ section {
     height: 606px;
     padding: 40px;
     margin: 0 auto;
+    position: relative; /* necessário para posicionar a img-inicio */
 }
 
 /* ======= Imagem principal ajustada ======= */
-.img-inicio {
+.inicio-fundo .img-inicio {
     position: absolute;
-    right: 0;
-    top: 18rem;
-    width: 35%;       /* ocupa 35% da largura do container */
-    max-width: 350px; /* máximo 350px de largura */
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    max-width: 300px;
     height: auto;
-    transition: width 0.3s ease; /* transição suave */
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 992px) {
-    .img-inicio {
-        width: 50%;
-        max-width: 300px;
+    .inicio-fundo .img-inicio {
+        width: 45%;
+        max-width: 250px;
     }
 }
 
 @media (max-width: 768px) {
-    .img-inicio {
-        display: none; /* esconde imagem em celulares */
+    .inicio-fundo .img-inicio {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: none;
+        margin-top: 1rem;
     }
 }
 
@@ -91,7 +95,6 @@ section {
     background: url('img/flor.png') top right no-repeat,
         url('img/flor-esquerda.png') bottom left no-repeat;
     background-size: 180px 180px;
-    /* Ajuste o tamanho conforme necessário */
 }
 
 #tropicalia .container {
@@ -100,7 +103,6 @@ section {
     justify-content: center;
     position: relative;
     z-index: 1;
-    /* Garante que o conteúdo fica acima das imagens do background */
 }
 
 h2 {
@@ -123,17 +125,13 @@ h2 {
     background-image: url('img/4965007.jpg');
     background-size: cover;
     padding: 4rem 0;
-    /* Espaçamento interno para a seção de contato */
 }
 
 .formulario {
     background-color: #ffffff;
     padding: 2rem;
-    /* Espaçamento interno dentro do formulário */
     border-radius: 10px;
-    /* Borda arredondada para o formulário */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Sombra suave para destacar o formulário */
     font-weight: bold;
 }
 
@@ -207,4 +205,3 @@ h2 {
 .alto-contraste .fundo-galeria {
     background: none;
 }
-
